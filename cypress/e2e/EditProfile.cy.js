@@ -19,6 +19,7 @@ cy.get('.employee-image').click() // click on profile picture
 cy.get('.oxd-file-div > .oxd-icon-button').click() // click on choose file
 cy.get('input[type="file"]').selectFile('cypress/fixtures/4.png', { force: true })  //upload file
 cy.get('.oxd-button--secondary').click() // click on save button
+cy.wait(2000) // wait for 2 seconds
 cy.get(':nth-child(6) > .oxd-main-menu-item').click() // click on My Info
 cy.get(':nth-child(1) > .orangehrm-tabs-item').click() // click on personal details
 cy.wait(1000)

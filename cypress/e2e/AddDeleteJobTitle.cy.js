@@ -7,7 +7,7 @@ it.only('Add and Delete Job Title', function() {
     cy.get('.oxd-button').click() // click on add button
     cy.get(':nth-child(2) > .oxd-input').type('CEO. Nasser', { delay: 200 }) // enter job title
     cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-textarea').type
-    cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-textarea').type('CEO. Nasser is the Chief Executive Officer of the company', { delay: 200 }) // enter job description
+    cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-textarea').type('CEO. Nasser is the Chief Executive Officer of the company')// enter job description
     cy.get('.oxd-file-button').click() // click on choose file 
     cy.wait(2000) // wait for 2 seconds
   cy.get('input[type="file"]')
