@@ -1,5 +1,14 @@
+before(() => {
+    cy.clearCookies();
+    cy.clearLocalStorage();
+})
+
 it.only('Add and Delete Employee', function() {
-// Add employee
+
+    // Login
+cy.login() // call login command from commands.js
+
+    // Add employee
 
 cy.get(':nth-child(1) > .oxd-main-menu-item').click() // click on PIM
 cy.get('.orangehrm-header-container > .oxd-button').click() // click on add employee button
@@ -13,7 +22,7 @@ cy.get(':nth-child(4) > .oxd-input-group > :nth-child(2) > .oxd-input').type('Ra
 cy.get('.user-password-cell > .oxd-input-group > :nth-child(2) > .oxd-input').type('Rararara@123', { delay: 200 }) // enter password
 cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type('Rararara@123', { delay: 200 }) // confirm password
 cy.get('.oxd-button--secondary').click() // click on save button
-cy.wait(5000) // wait for 5  seconds
+cy.wait(4000) // wait for 5  seconds
 
 
 //Search employee and delete employee
@@ -25,5 +34,8 @@ cy.get('.oxd-form-actions > .oxd-button--secondary').click() // click on search 
 cy.wait(2000)
 cy.get('.oxd-table-cell-actions > :nth-child(1) > .oxd-icon').click() // click on delete button 
 cy.get('.oxd-button--label-danger').click()  // click on confirm delete button 
+
+// logut
+cy.logout() // call logout command from commands.js
 
 })

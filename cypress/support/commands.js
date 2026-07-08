@@ -25,6 +25,8 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('login', () => {
+
+
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
     cy.get('[name="username"]').type('admin', { delay: 200 })
     cy.get('[name="password"]').type('admin123', { delay: 200 })
@@ -130,7 +132,7 @@ cy.get('[name="lastName"]').clear().type('Alshammari', { delay: 200 }) // enter 
 // cy.get('.orangehrm-card-container > .oxd-form > .oxd-form-actions > .oxd-button').click() // click on save button   
 })
 
-Cypress.Commands.add('Logout', () => {
+Cypress.Commands.add('logout', () => {
     cy.get('.oxd-userdropdown-name').click()
     cy.get(':nth-child(4) > .oxd-userdropdown-link').click()
 })

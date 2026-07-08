@@ -1,5 +1,14 @@
+before(() => {
+    cy.clearCookies();
+    cy.clearLocalStorage();
+})
+
 it.only('Add and Delete Job Title', function() {
 
+
+cy.login() // call login command from commands.js
+
+  
    // Add job title
     cy.get(':nth-child(1) > .oxd-main-menu-item').click() // click on Admin
     cy.get(':nth-child(2) > .oxd-topbar-body-nav-tab-item > .oxd-icon').click() // click on Job dropdown
@@ -36,5 +45,8 @@ it.only('Add and Delete Job Title', function() {
             });
         cy.wait(1000);
         cy.get('.orangehrm-modal-footer > .oxd-button--label-danger').click(); // confirm delete
+
+    cy.logout() // call logout command from commands.js
+
 
 })
